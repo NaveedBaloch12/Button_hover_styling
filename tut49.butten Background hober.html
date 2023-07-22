@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: rgb(234, 234, 234);
+        }
+
+        .contanier {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10rem;
+        }
+
+        .btn {
+            position: relative;
+            width: 10rem;
+            margin: 1rem;
+            padding: .9rem;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: rgb(234, 234, 234);
+            box-shadow:
+                0.9px 1.3px 2.4px rgba(0, 0, 0, 0.044),
+                2.5px 3.5px 6.6px rgba(0, 0, 0, 0.055),
+                6px 8.4px 16px rgba(0, 0, 0, 0.066),
+                20px 28px 53px rgba(0, 0, 0, 0.11);
+            overflow: hidden;
+            transition: .2s;
+
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+
+        .btn::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            bottom: 0;
+            left: 0;
+
+        }
+
+        /* Button Center */
+        .btn_center::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            bottom: 0;
+            left: 0;
+            transform: scale(0, 1);
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn_center:hover::after {
+            transform: scale(1, 1);
+        }
+
+        /* Button Left */
+        .btn_left::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            bottom: 0;
+            left: 0;
+            transform: scale(0, 1);
+            transition: transform 0.3s ease;
+            transform-origin: bottom left;
+            z-index: -1;
+        }
+
+        .btn_left:hover::after {
+            transform: scale(1, 1);
+        }
+
+        /* Button Bottom */
+        .btn_bottom::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            bottom: 0;
+            left: 0;
+            transition: transform 0.3s ease;
+            transform: translateY(3rem);
+            z-index: -1;
+        }
+
+        .btn_bottom:hover::after {
+            transform: translateY(0rem);
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="contanier">
+        <button class="btn btn_center">Center</button>
+        <button class="btn btn_left">Left</button>
+        <button class="btn btn_bottom">Bottom</button>
+    </div>
+</body>
+
+</html>
